@@ -37,7 +37,6 @@ class GetSystemService @Inject constructor(
         activity.setTurnScreenOn(true)
 
         activity.window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
-        keyguardManager.requestDismissKeyguard(activity, null)
     }
 
     fun turnOffScreen(activity: ComponentActivity) {
