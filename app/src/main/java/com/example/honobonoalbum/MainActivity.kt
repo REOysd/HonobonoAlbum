@@ -52,7 +52,7 @@ class MainActivity : ComponentActivity() {
     // TODO: テスト用のメソッド
     private fun testWakeUpDevice() {
         Handler(Looper.getMainLooper()).postDelayed({
-            wakeUpManager.forceWakeUpIgnoringLock(vibrate = true)
+            wakeUpManager.forceWakeUpIgnoringLock()
         }, 10000)
     }
 }

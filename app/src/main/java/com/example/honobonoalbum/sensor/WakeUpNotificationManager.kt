@@ -43,7 +43,6 @@ class WakeUpNotificationManager @Inject constructor(
             addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)
             addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-            addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
             putExtra("WAKE_UP_SCREEN", true)
         }
 
@@ -53,7 +52,6 @@ class WakeUpNotificationManager @Inject constructor(
             intent,
             PendingIntent.FLAG_UPDATE_CURRENT or
                     PendingIntent.FLAG_IMMUTABLE
-//                    PendingIntent.FLAG_ONE_SHOT
         )
 
         val notification = NotificationCompat.Builder(context, notificationChannelId)

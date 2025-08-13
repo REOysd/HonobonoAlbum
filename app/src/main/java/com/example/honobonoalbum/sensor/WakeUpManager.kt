@@ -40,20 +40,7 @@ class WakeUpManager @Inject constructor(
     }
 
 
-    private fun vibrateDevice() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-            val effect = VibrationEffect.createOneShot(
-                200,
-                VibrationEffect.DEFAULT_AMPLITUDE
-            )
-            getSystemService.vibrator.vibrate(effect)
-        } else {
-            @Suppress("DEPRECATION")
-            getSystemService.vibrator.vibrate(100)
-        }
-    }
-
-    fun forceWakeUpIgnoringLock(vibrate: Boolean = true) {
+    fun forceWakeUpIgnoringLock() {
         try {
             acquireWakeLock()
 
@@ -63,15 +50,10 @@ class WakeUpManager @Inject constructor(
                 addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
                 addFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS)
                 putExtra("WAKE_UP_SCREEN", true)
-                putExtra("FORCE_UNLOCK", true)
             }
 
             notificationManager.showWakeUpNotification()
             context.startActivity(intent)
-
-            if (vibrate) {
-                vibrateDevice()
-            }
         } catch (e: Exception) {
             Log.e("WakeUpManager", "Failed to force wake up device", e)
         }
