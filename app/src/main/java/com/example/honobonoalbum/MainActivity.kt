@@ -8,8 +8,8 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.material3.Text
 import com.example.honobonoalbum.sensor.GetSystemService
-import com.example.honobonoalbum.sensor.WakeUpManager
-import com.example.honobonoalbum.sensor.WakeUpNotificationManager
+import com.example.honobonoalbum.sensor.wakeUp.WakeUpManager
+import com.example.honobonoalbum.sensor.wakeUp.WakeUpNotificationManager
 import com.example.honobonoalbum.ui.theme.HonobonoAlbumTheme
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject

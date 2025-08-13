@@ -1,12 +1,11 @@
-package com.example.honobonoalbum.sensor
+package com.example.honobonoalbum.sensor.wakeUp
 
 import android.content.Context
 import android.content.Intent
-import android.os.Build
 import android.os.PowerManager
-import android.os.VibrationEffect
 import android.util.Log
 import com.example.honobonoalbum.MainActivity
+import com.example.honobonoalbum.sensor.GetSystemService
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 import javax.inject.Singleton
